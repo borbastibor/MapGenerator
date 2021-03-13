@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="css/generator.css">
 
         <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/OpenSimplexNoise.js"></script>
-        <script src="js/TextureGenerator.js"></script>
+        <script src="js/opensimplex_noise.js"></script>
+        <script src="js/map_generator.js"></script>
         <script src="js/generator.js"></script>
     </head>
     <body>
@@ -32,7 +32,7 @@
                     <table>
                         <tr>
                             <td><label for="resolution">Resolution:</label></td>
-                            <td><input type="number" id="resolution" name="resolution" value="256" min="2"/></td>
+                            <td><input type="number" id="resolution" name="resolution" value="512" min="2"/></td>
                         </tr>
                         <tr>
                             <td><label for="seed">Seed:</label></td>
@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <td><label for="frequency">Frequency:</label></td>
-                            <td><input type="number" id="frequency" name="frequency" value="1" min="0" step="0.001"/></td>
+                            <td><input type="number" id="frequency" name="frequency" value="0.01" min="0" step="0.001"/></td>
                         </tr>
                         <tr>
                             <td><label for="amplitude">Amplitude:</label></td>
@@ -56,11 +56,11 @@
                         </tr>
                         <tr>
                             <td><label for="presistence">Presistence:</label></td>
-                            <td><input type="number" id="presistence" name="presistence" value="0.5" step="0.01" min="0"/></td>
+                            <td><input type="number" id="presistence" name="presistence" value="1" step="0.01" min="0"/></td>
                         </tr>
                         <tr>
                             <td><label for="range">Range:</label></td>
-                            <td><input type="number" id="range" name="range" value="1" step="0.01" min="0"/></td>
+                            <td><input type="number" id="range" name="range" value="0.5" step="0.01" min="0"/></td>
                         </tr>
                         <tr>
                             <td><label for="offsetx">Offset X:</label></td>

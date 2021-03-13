@@ -2,7 +2,7 @@ $(document).ready(function() {
     const context = $("#canvas")[0].getContext('2d');
     
     $('#generate').on('click', () => {
-        const texture_generator = textureGenerator();
+        const texture_generator = mapGenerator();
         let resolution = $('#resolution').val();
         let lacunarity = $('#lacunarity').val();
         let seed = $('#seed').val();
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         seed = seed ?? Date.now();
 
-        texture_generator.createTexture(
+        texture_generator.createMap(
             image_data, resolution, resolution, seed, frequency, amplitude, octaves, lacunarity, presistence, range, offset
         );
 

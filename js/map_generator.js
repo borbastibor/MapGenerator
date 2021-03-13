@@ -1,6 +1,6 @@
-function textureGenerator() {
+function mapGenerator() {
     const API = {
-        createTexture(image_data_ref, width, height, seed, freq, amp, oct, lac, pres, rng, offset) {
+        createMap(image_data_ref, width, height, seed, freq, amp, oct, lac, pres, rng, offset) {
             const openSimplex = openSimplexNoise(seed);
             
             let x, y, index = 0;
