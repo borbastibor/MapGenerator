@@ -9,8 +9,10 @@ $(document).ready(function() {
         let frequency = $('#frequency').val();
         let octaves = $('#octaves').val();
         let presistence = $('#presistence').val();
-        let offsetx = $('#offsetx').val();
-        let offsety = $('#offsety').val();
+        let offset = {
+            x: $('#offsetx').val(),
+            y: $('#offsety').val()
+        };
         let amplitude = $('#amplitude').val();
         let range = $('#range').val();
         let image_data = context.createImageData(resolution, resolution);
@@ -18,7 +20,7 @@ $(document).ready(function() {
         seed = seed ?? Date.now();
 
         texture_generator.createTexture(
-            image_data, resolution, resolution, seed, frequency, amplitude, octaves, lacunarity, presistence, range, offsetx, offsety
+            image_data, resolution, resolution, seed, frequency, amplitude, octaves, lacunarity, presistence, range, offset
         );
 
         $('#canvas').prop('width', resolution).prop('height', resolution);
@@ -43,7 +45,26 @@ $(document).ready(function() {
     });
 
     $('#load').on('click', () => {
-        //TODO load settings from file
+        $('#fileinput').click();
+    });
+
+    $('#fileinput').on('change', (e) => {
+        let fr = new FileReader(); 
+        fr.onload = function(){ 
+            let data = JSON.parse(fr.result);
+            $('#resolution').val(data.resolution);
+            $('#lacunarity').val(data.lacunarity);
+            $('#seed').val(data.seed);
+            $('#frequency').val(data.frequency);
+            $('#octaves').val(data.octaves);
+            $('#presistence').val(data.presistence);
+            $('#offsetx').val(data.offsetx);
+            $('#offsety').val(data.offsety);
+            $('#amplitude').val(data.amplitude);
+            $('#range').val(data.range)
+        } 
+              
+        fr.readAsText(e.target.files[0]);
     });
 
     function download(data, file_name, content_type) {

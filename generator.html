@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Borbás Tibor">
+        <meta name="description" content="Heightmap generator using opensimplex noise">
         <title>Heightmap generator</title>
 
         <link rel="stylesheet" href="css/w3.css">
@@ -70,9 +71,10 @@
                             <td><input type="number" id="offsety" name="offsety" value="0"/></td>
                         </tr>
                     </table><hr>
-                    <button class="w3-button w3-green font-bold width-full" id="generate">Generate map</button><br><br>
-                    <button class="w3-button w3-green font-bold width-full" id="save">Save settings</button><br><br>
-                    <button class="w3-button w3-green font-bold width-full" id="load">Load settings</button>
+                    <button class="w3-button w3-green w3-round-large font-bold width-full" id="generate">Generate map</button><br><br>
+                    <button class="w3-button w3-green w3-round-large font-bold width-full" id="save">Save settings</button><br><br>
+                    <button class="w3-button w3-green w3-round-large font-bold width-full" id="load">Load settings</button>
+                    <input type="file" class="input-hidden" id="fileinput" name="fileinput" accept=".json"/>
                 </div>
             </div>
         </div>
