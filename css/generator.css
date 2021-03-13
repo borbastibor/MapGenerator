@@ -1,0 +1,39 @@
+.font-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.m0 {
+    margin: 0;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.p16 {
+  padding: 16px;  
+}
+
+.height-full-viewport {
+    height: 100vh;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.border-collapse {
+    border-collapse: collapse;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.align-center {
+    text-align: center;
+}

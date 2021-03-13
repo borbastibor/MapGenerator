@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Borbás Tibor">
+        <title>Heightmap generator</title>
+
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="css/generator.css">
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/OpenSimplexNoise.js"></script>
+        <script src="js/TextureGenerator.js"></script>
+        <script src="js/generator.js"></script>
+    </head>
+    <body>
+        <div class="w3-cell-row" style="width:100%">
+            <!-- Picture panel -->
+            <div class="w3-container w3-light-grey w3-cell p16" style="width:75%" id="image_container">
+                <canvas id="canvas"></canvas>
+            </div>
+            
+            <!-- Settings panel -->
+            <div class="w3-container w3-blue-grey w3-cell height-full-viewport" style="width:25%">
+                <div class="w3-center">
+                    <h4 class="p0 font-bold">Settings</h4>
+                    <hr>
+                </div>
+                <div class="w3-container w3-blue-grey">
+                    <table>
+                        <tr>
+                            <td><label for="resolution">Resolution:</label></td>
+                            <td><input type="number" id="resolution" name="resolution" value="256" min="2"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="seed">Seed:</label></td>
+                            <td><input type="text" id="seed" name="seed"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="frequency">Frequency:</label></td>
+                            <td><input type="number" id="frequency" name="frequency" value="1" min="0" step="0.001"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="amplitude">Amplitude:</label></td>
+                            <td><input type="number" id="amplitude" name="amplitude" value="1" min="0" step="0.01"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="octaves">Octaves:</label></td>
+                            <td><input type="number" id="octaves" name="octaves" value="1" min="1"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="lacunarity">Lacunarity:</label></td>
+                            <td><input type="number" id="lacunarity" name="lacunarity" value="2" step="0.01" min="1"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="presistence">Presistence:</label></td>
+                            <td><input type="number" id="presistence" name="presistence" value="0.5" step="0.01" min="0"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="range">Range:</label></td>
+                            <td><input type="number" id="range" name="range" value="1" step="0.01" min="0"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="offsetx">Offset X:</label></td>
+                            <td><input type="number" id="offsetx" name="offsetx" value="0"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="offsety">Offset Y:</label></td>
+                            <td><input type="number" id="offsety" name="offsety" value="0"/></td>
+                        </tr>
+                    </table><hr>
+                    <button class="w3-button w3-green font-bold width-full" id="generate">Generate map</button><br><br>
+                    <button class="w3-button w3-green font-bold width-full" id="save">Save settings</button><br><br>
+                    <button class="w3-button w3-green font-bold width-full" id="load">Load settings</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
